@@ -22,12 +22,9 @@
 Вака гизминуваме сите патеки на гранење.
 
 
-5. Тест случаи според Multiple Condition критериумот за условот
-„if (user==null || user.getPassword()==null || user.getEmail()==null)“
-
+5. Тест случаи според Multiple Condition критериумот за условот „if (user==null || user.getPassword()==null || user.getEmail()==null)“
 Според Multiple Condition критериумот за овие услови постојат тогаш, бидејки има оператор или помеѓу сите овие услови значи дека доколку еден од нив е исполнет, има вредност „true“ тогаш ќе се влезе во условот, единствен начин да не влеземе во условот е сите вредности да не се null. 
 	1. Доколку за изразите имаме вредности: true||false||false, false||true||false, false||false||true, true||true||false, true||false||true, false||true||true или true||true||true тогаш ќе ги иминеме само јазлите A, B и C. 
 	2. Доколку ниту еден од изразите нема вредност null, односно имаме вредности false||false||false, тогаш изразот може да пројде низ одредена група на јазли, соодветно user=ABC, user.getPassword()= 12342678 A, user.getEmail() = abc@gmail.com, user.getUsername = null (корисникот е внесен по прв пат и нема username, и не се совпаѓа со ни еден стар корисник) се изминуваат јазлите: B-D, D-E, E-F, G-H, K-M, M-I, U-V, V-W, W-V, W-X и V-Y, потоа доколку имаме user=ABC, user.getPassword() = ABC, user.getEmail() = abcgmail.com, user.getUsername = null (корисникот е внесен по прв пат и нема username, и не се совпаѓа со ни еден стар корисник) дополнително се изминуваат и јазлите: G-O,R-S и S-Y, и доколку се внесат user=ABC, user.getPassword() = 12342678A, user.getEmail() = abcgmail.com, user.getUsername = abcgmail.com (стар корисник, и се совпаѓа со некој еден стар корисник) дополнително ги изминуваме и јазлите: D-F, K-L, L-M,M-N, N-I, R-T и U-Y. 
 
 Со овие вредности се изминува овој Multiple Condition начин на тестирање.
-
